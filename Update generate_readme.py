@@ -2,7 +2,7 @@ import os
 from urllib.parse import quote
 import re
 
-print("README 자동 갱신 트리거 테스트")
+print("README 자동 갱신 트리거 테스트!!")
 
 # 복구된 헤더
 HEADER = """#

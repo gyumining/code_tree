@@ -40,6 +40,17 @@ DIFFICULTY_EMOJIS = {
     "어려움": "🔴"   # Red Circle
 }
 
+def generate_content():
+    # 자동으로 README에 넣을 내용 구성 예시
+    content = "# Code Tree 문제 풀이 모음\n\n"
+    for folder in os.listdir():
+        if os.path.isdir(folder) and folder[0].isdigit():
+            content += f"- [{folder}](./{folder})\n"
+    return content
+
+with open("README.md", "w", encoding="utf-8") as f:
+    f.write(generate_content())
+
 def get_language_from_extension(file_name):
     """파일 확장자를 기반으로 언어 반환"""
     for language, ext in SUPPORTED_LANGUAGES.items():

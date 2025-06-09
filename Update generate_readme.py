@@ -2,6 +2,8 @@ import os
 from urllib.parse import quote
 import re
 
+print("README 자동 갱신 트리거 테스트")
+
 # 복구된 헤더
 HEADER = """#
 # 코드트리 문제 풀이 목록

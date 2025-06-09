@@ -2,14 +2,10 @@ import os
 from urllib.parse import quote
 import re
 
-
-
 # 복구된 헤더
 HEADER = """#
 # 코드트리 문제 풀이 목록
 [![코드트리|실력진단-ngm0123](https://banner.codetree.ai/v1/banner/ngm0123)](https://www.codetree.ai/profiles/ngm0123)
-
-
 ## 🌳 코드트리 문제 목록
 """
 
@@ -39,17 +35,6 @@ DIFFICULTY_EMOJIS = {
     "보통": "🟡",   # Yellow Circle
     "어려움": "🔴"   # Red Circle
 }
-
-def generate_content():
-    # 자동으로 README에 넣을 내용 구성 예시
-    content = "# Code Tree 문제 풀이 모음\n\n"
-    for folder in os.listdir():
-        if os.path.isdir(folder) and folder[0].isdigit():
-            content += f"- [{folder}](./{folder})\n"
-    return content
-
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(generate_content())
 
 def get_language_from_extension(file_name):
     """파일 확장자를 기반으로 언어 반환"""
@@ -140,7 +125,7 @@ def generate_readme():
                 content += "| 업로드 날짜 | 문제 폴더 | 언어 | 링크 | 난이도 |\n"
                 content += "| ----------- | --------- | ---- | ----- | ------- |\n"
                 for problem in problems_by_difficulty[difficulty]:
-                    content += f"| {problem['date']} | [{problem['folder']}]({quote(problem['path'])}) | {problem['language']} | [링크]({quote(problem['path'])}) | ![쉬움]({problem['difficulty_image']}) |\n"
+                    content += f"| {problem['date']} | [{problem['folder']}]({quote(problem['path'])}) | {problem['language']} | [링크]({quote(problem['path'])}) | ![난이도]({problem['difficulty_image']}) |\n"
 
         # 파일에 내용 저장
         with open("README.md", "w", encoding="utf-8") as fd:

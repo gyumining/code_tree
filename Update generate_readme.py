@@ -7,7 +7,8 @@ print("README 자동 갱신 트리거 테스트!!")
 # 복구된 헤더
 HEADER = """#
 # 코드트리 문제 풀이 목록
-// 여기에 실력진단을 넣어주면 귀엽게 구현이 된다.
+[![코드트리|실력진단-ngm0123](https://banner.codetree.ai/v1/banner/ngm0123)](https://www.codetree.ai/profiles/ngm0123)
+
 ## 🌳 코드트리 문제 목록
 """
 
